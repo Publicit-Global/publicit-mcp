@@ -1,9 +1,9 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
   "name": "com.publicit/mcp",
-  "description": "Plan, launch and track connected-TV, street-screen and mobile ad campaigns on Publicit's EU bidder.",
+  "description": "Plan, prepare and track connected-TV, street-screen and mobile ad campaigns on Publicit's EU bidder.",
   "websiteUrl": "https://www.publicit.com/mcp",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "remotes": [
     {
       "type": "streamable-http",
