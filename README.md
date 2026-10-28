@@ -97,7 +97,7 @@ campaign and gives you the link.
 **Which ad formats work?** Images (JPEG, PNG, WebP, GIF up to 20 MB), video (MP4, WebM, MOV up to 300 MB) and audio.
 Each space shows the sizes it accepts; Publicit checks them when you upload.
 
-**Where does my data go?** To Publicit only, under our [privacy policy](https://publicit.com/privacy).
+**Where does my data go?** To Publicit only, under our [privacy policy](https://www.publicit.com/privacy).
 
 ## Links
 
@@ -105,8 +105,8 @@ Each space shows the sizes it accepts; Publicit checks them when you upload.
 - Infrastructure: https://www.publicit.com/infrastructure
 - Server metadata: https://www.publicit.com/.well-known/mcp.json
 - Docs: https://docs.publicit.com
-- Privacy policy: https://publicit.com/privacy
-- Company: Publicit Global S.L., Barcelona · IAB Europe TCF vendor ID 1563 ·
+- Privacy policy: https://www.publicit.com/privacy · Terms: https://www.publicit.com/terms-of-use
+- Company: Publicit Global SLU, Barcelona · IAB Europe TCF vendor ID 1563 ·
   [Wikidata Q141404885](https://www.wikidata.org/wiki/Q141404885)
 
 ## Support
