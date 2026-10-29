@@ -103,7 +103,7 @@ Each space shows the sizes it accepts; Publicit checks them when you upload.
 
 - Product page: https://www.publicit.com/mcp · Spanish: https://www.publicit.com/es/agentes-ia
 - Infrastructure: https://www.publicit.com/infrastructure
-- Server metadata: https://www.publicit.com/.well-known/mcp.json
+- Server metadata: https://www.publicit.com/.well-known/mcp.json · MCP Registry: `io.github.Publicit-Global/publicit-mcp`
 - Docs: https://docs.publicit.com
 - Privacy policy: https://www.publicit.com/privacy · Terms: https://www.publicit.com/terms-of-use
 - Company: Publicit Global SLU, Barcelona · IAB Europe TCF vendor ID 1563 ·

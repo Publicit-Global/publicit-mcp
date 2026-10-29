@@ -1,15 +1,20 @@
 # Publica server.json en el registro oficial de MCP (registry.modelcontextprotocol.io)
-# bajo el espacio com.publicit, verificado por DNS (TXT en publicit.com).
+# como io.github.Publicit-Global/publicit-mcp.
 #
-# Se lanza a mano (o desde scripts/publicar-registro.sh) después de desplegar el
-# dashboard: el registro anuncia la versión de server.json, que tiene que ser la que
-# sirve producción. La clave privada Ed25519 vive en el secreto MCP_PRIVATE_KEY.
+# Sin secretos ni DNS: GitHub firma la petición (OIDC) y el registro da permiso para
+# publicar bajo io.github.<organización>/*. Se lanza solo al cambiar server.json en
+# main (sube `version` con cada versión nueva del MCP; no se puede republicar la
+# misma) o a mano desde la pestaña Actions.
 name: Publish to MCP Registry
 
 on:
+  push:
+    branches: [main]
+    paths: [server.json, .github/workflows/publish-registry.yml]
   workflow_dispatch:
 
 permissions:
+  id-token: write # OIDC: el registro comprueba que la petición viene de este repo
   contents: read
 
 env:
@@ -32,14 +37,11 @@ jobs:
           grep " ${archive}\$" checksums.txt | sha256sum -c -
           tar -xzf "$archive" mcp-publisher
 
-      - name: Check the DNS proof is published
-        run: dig TXT publicit.com +short | grep -q 'v=MCPv1; k=ed25519' || { echo "Missing TXT v=MCPv1 on publicit.com"; exit 1; }
-
-      - name: Log in (DNS, publicit.com)
-        run: ./mcp-publisher login dns --domain publicit.com --private-key "${{ secrets.MCP_PRIVATE_KEY }}"
+      - name: Log in (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
 
       - name: Publish server.json
         run: ./mcp-publisher publish
 
       - name: Show the registry entry
-        run: curl -fsS 'https://registry.modelcontextprotocol.io/v0/servers?search=com.publicit/mcp'
+        run: curl -fsS 'https://registry.modelcontextprotocol.io/v0/servers?search=io.github.Publicit-Global/publicit-mcp'
