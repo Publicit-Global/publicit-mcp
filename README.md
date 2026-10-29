@@ -17,8 +17,8 @@ through the same bidder.
 
 ## Quickstart
 
-**Claude (claude.ai, desktop or mobile):** Settings → Connectors → Add custom connector → name `Publicit`, URL
-`https://www.dashboard.publicit.com/mcp` → Connect → sign in and allow.
+**Claude (claude.ai, desktop or mobile):** Publicit is in the [Claude connectors directory](https://claude.ai/directory/publicit): open it and choose Connect, then sign in and allow. Or add it by hand: Settings → Connectors → Add custom connector → URL
+`https://www.dashboard.publicit.com/mcp`.
 
 **ChatGPT:** Settings → Apps & Connectors → Advanced → turn on developer mode → Create → URL
 `https://www.dashboard.publicit.com/mcp`, authentication OAuth → sign in and allow.
