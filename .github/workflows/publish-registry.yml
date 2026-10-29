@@ -1,0 +1,47 @@
+# Publica server.json en el registro oficial de MCP (registry.modelcontextprotocol.io)
+# como io.github.Publicit-Global/publicit-mcp.
+#
+# Sin secretos ni DNS: GitHub firma la petición (OIDC) y el registro da permiso para
+# publicar bajo io.github.<organización>/*. Se lanza solo al cambiar server.json en
+# main (sube `version` con cada versión nueva del MCP; no se puede republicar la
+# misma) o a mano desde la pestaña Actions.
+name: Publish to MCP Registry
+
+on:
+  push:
+    branches: [main]
+    paths: [server.json, .github/workflows/publish-registry.yml]
+  workflow_dispatch:
+
+permissions:
+  id-token: write # OIDC: el registro comprueba que la petición viene de este repo
+  contents: read
+
+env:
+  # Versión fijada a propósito (no `latest`); si el registro responde "invalid
+  # audience", subirla.
+  MCP_PUBLISHER_VERSION: v1.8.1
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mcp-publisher (checksum verified)
+        run: |
+          base_url="https://github.com/modelcontextprotocol/registry/releases/download/${MCP_PUBLISHER_VERSION}"
+          archive="mcp-publisher_linux_amd64.tar.gz"
+          curl -fsSL -o "$archive" "$base_url/$archive"
+          curl -fsSL -o checksums.txt "$base_url/registry_${MCP_PUBLISHER_VERSION#v}_checksums.txt"
+          grep " ${archive}\$" checksums.txt | sha256sum -c -
+          tar -xzf "$archive" mcp-publisher
+
+      - name: Log in (GitHub OIDC)
+        run: ./mcp-publisher login github-oidc
+
+      - name: Publish server.json
+        run: ./mcp-publisher publish
+
+      - name: Show the registry entry
+        run: curl -fsS 'https://registry.modelcontextprotocol.io/v0/servers?search=io.github.Publicit-Global/publicit-mcp'
