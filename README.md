@@ -68,7 +68,7 @@ the campaigns you launch.
 | Area | Tools |
 |---|---|
 | Account | `whoami`, `get_team` |
-| Campaigns | `list_campaigns`, `get_campaigns_overview`, `get_campaign`, `create_campaign`, `update_campaign`, `add_space_to_campaign`, `remove_space_from_campaign`, `launch_campaign` (amount + link, no charge), `pause_campaign`, `resume_campaign` |
+| Campaigns | `list_campaigns`, `get_campaigns_overview`, `get_campaign`, `create_campaign`, `update_campaign`, `add_space_to_campaign`, `remove_space_from_campaign`, `prepare_campaign_launch` (amount + link, no charge), `pause_campaign`, `resume_campaign` |
 | Creatives | `list_campaign_media`, `upload_creative_from_url`, `list_studio_creatives`, `add_studio_creative_to_campaign`, `assign_creative` |
 | Performance and billing | `get_campaign_performance`, `list_transactions` |
 

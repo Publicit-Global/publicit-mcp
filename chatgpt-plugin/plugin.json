@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "publicit",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Plan, prepare and track connected-TV, street-screen and mobile ad campaigns on Publicit's EU bidder.",
   "author": {
     "name": "Publicit Global SLU",
@@ -73,7 +73,7 @@
             {
               "description": "Prepare the launch without charging.",
               "prompt": "How much would it cost to launch the bakery campaign, and where do I pay?",
-              "tools_triggered": "launch_campaign",
+              "tools_triggered": "prepare_campaign_launch",
               "expected_behavior": "Returns the exact amount with its breakdown and a link to the campaign page in the Publicit dashboard. It does not charge, and the campaign stays a draft."
             }
           ],
