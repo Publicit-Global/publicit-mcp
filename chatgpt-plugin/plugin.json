@@ -1,0 +1,48 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "publicit",
+  "version": "2.1.0",
+  "description": "Plan, prepare and track connected-TV, street-screen and mobile ad campaigns on Publicit's EU bidder.",
+  "author": {
+    "name": "Publicit Global SLU",
+    "email": "info@publicit.es",
+    "url": "https://www.publicit.com"
+  },
+  "homepage": "https://www.publicit.com/mcp",
+  "repository": "https://github.com/Publicit-Global/publicit-mcp",
+  "license": "MIT",
+  "keywords": [
+    "advertising",
+    "connected-tv",
+    "ctv",
+    "dooh",
+    "campaigns",
+    "marketing"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Publicit",
+        "shortDescription": "Ad campaigns on TV & screens",
+        "longDescription": "Publicit is European advertising infrastructure with its own real-time bidder hosted in the EU. Advertisers book connected TV (smart TVs and TV apps), digital street screens and mobile on the same platform.\n\nWith Publicit in ChatGPT you manage your campaigns in plain language: create a campaign from a sentence and Publicit fills in the audience, locations and the spaces it recommends; adjust budget, dates, targeting and spaces; add your ad from a link or from your Publicit Studio library; check delivery, impressions, spend and what needs your attention; pause campaigns.\n\nPublicit never charges you from ChatGPT. When a campaign is ready, it gives you the exact amount (budget + 10% Publicit fee + VAT) and a link to your campaign in the Publicit dashboard, where you pay or activate it yourself. Cards, balance and refunds are managed only in Publicit.\n\nYou sign in with your own Publicit account, ChatGPT only sees what your user sees, and you can disconnect it at any time. A free Publicit account is needed; campaigns start at €500.",
+        "developerName": "Publicit Global SLU",
+        "category": "Business",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://www.publicit.com/mcp",
+        "supportURL": "https://github.com/Publicit-Global/publicit-mcp/issues",
+        "privacyPolicyURL": "https://www.publicit.com/privacy",
+        "termsOfServiceURL": "https://www.publicit.com/terms-of-use",
+        "defaultPrompt": [
+          "Advertise my café on connected TV in Chamberí, weekday mornings, for a month, with €500.",
+          "How are my Publicit campaigns doing, and is anything waiting for me?",
+          "How much would it cost to launch my latest campaign, and where do I pay?"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
